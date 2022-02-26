@@ -14,10 +14,10 @@
 
 int	ft_parse_single(char *str)
 {
-	
+	return (0);
 }
 
-int	ft_parse_multiple()
+int	ft_parse_multiple(char **str)
 {
-
+	return (0);
 }

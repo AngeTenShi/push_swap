@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/07/31 00:57:16 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/23 19:21:31 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strdup(const char *s)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	char	*str;
+	int		i;
 
-	if (ac < 2)
+	i = 0;
+	str = (char *)malloc(sizeof(char) * ft_strlen((const char *)s) + 1);
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		str[i] = s[i];
+		i++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	str[i] = '\0';
+	return (str);
 }

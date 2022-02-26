@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/23 17:35:59 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/02 16:36:08 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	unsigned int		i;
+	unsigned int		j;
 
-	if (ac < 2)
+	if (s2[0] == '\0')
+		return ((char *)s1);
+	i = 0;
+	while (s1[i] && i < n)
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		j = 0;
+		if (s1[i] == s2[j])
+		{
+			while (i + j < n && s1[i + j] == s2[j])
+			{
+				j++;
+				if (!s2[j])
+					return ((char *)&s1[i]);
+			}
+		}
+		i++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	return (0);
 }

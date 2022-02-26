@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/06/10 17:50:58 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/28 14:48:36 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	size_t	i;
 
-	if (ac < 2)
+	i = 0;
+	while (((unsigned char)s1[i] || (unsigned char)s2[i]) && (i < n))
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	return (0);
 }

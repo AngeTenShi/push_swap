@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/31 10:33:38 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/31 10:36:40 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+t_list	*ft_lstnew(void *content)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_list	*new;
 
-	if (ac < 2)
-	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
-	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->next = NULL;
+	new->content = content;
+	return (new);
 }

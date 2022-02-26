@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/08/09 17:33:49 by anggonza          #+#    #+#             */
+/*   Updated: 2021/10/23 17:53:35 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	unsigned char	*str;
+	unsigned char	chara;
+	size_t			i;
 
-	if (ac < 2)
+	chara = (unsigned char)c;
+	str = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		if (str[i] == chara)
+			return (str + i);
+		i++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	return (NULL);
 }

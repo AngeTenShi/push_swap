@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printptr_count.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/11/03 17:25:14 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/03 18:42:07 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+void	ft_printptr_count(unsigned long ptr, int *count, int state)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	char	*hexa;
 
-	if (ac < 2)
+	hexa = ft_strdup("0123456789abcdef");
+	if (!hexa)
+		return ;
+	if (state == 0)
+		ft_putstr("0x", count);
+	if (ptr < 0)
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		ft_putchar_count('-', count);
+		ptr *= -1;
 	}
-	else if (ac == 2)
+	if (ptr >= 0 && ptr <= 15)
 	{
-		ft_parse_single(av[1]);
+		ft_putchar_count(hexa[ptr], count);
 	}
 	else
 	{
-		ft_parse_multiple(av);
+		ft_printptr_count(ptr / 16, count, 1);
+		ft_putchar_count(hexa[ptr % 16], count);
 	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	free(hexa);
 }

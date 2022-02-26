@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/08/06 18:51:32 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/02 16:08:33 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	size_t	n;
+	size_t	m;
+	size_t	p;
 
-	if (ac < 2)
+	m = 0;
+	n = ft_strlen((const char *)dst);
+	p = ft_strlen(src);
+	if (size == 0)
+		return (p);
+	while ((src[m] != '\0') && ((n + m) < (size - 1)))
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		dst[n + m] = src[m];
+		m++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	dst[n + m] = '\0';
+	if (size > n)
+		return (n + p);
+	return (size + p);
 }

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/23 16:17:23 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/02 11:47:24 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	unsigned int		i;
+	char				*result;
 
-	if (ac < 2)
+	if (!s)
+		return (NULL);
+	if (s[0] == 0)
+		return (ft_strdup(""));
+	i = 0;
+	result = malloc(ft_strlen(s) + 1);
+	if (!result)
+		return (NULL);
+	while (s[i])
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		result[i] = f(i, s[i]);
+		i++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	result[i] = 0;
+	return (result);
 }

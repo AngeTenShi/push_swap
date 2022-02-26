@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/10/31 10:50:52 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/02 14:03:37 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_list	*elem;
 
-	if (ac < 2)
+	elem = *alst;
+	if (!*alst)
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		*alst = new;
+		return ;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	while (elem->next)
+		elem = elem->next;
+	elem->next = new;
 }

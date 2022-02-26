@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/11/03 14:25:44 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/03 18:43:54 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+int	ft_printf(const char *input, ...)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	int		i;
+	int		count;
+	va_list	args;
 
-	if (ac < 2)
+	va_start(args, input);
+	i = 0;
+	count = 0;
+	while (input[i])
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
+		if (input[i] != '%')
+			ft_putchar_count(input[i], &count);
+		else
+		{
+			if (ft_checkflag(input, i, &count, args) == 0)
+				ft_putchar_count('%', &count);
+			i++;
+		}
+		i++;
 	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	return (count);
 }

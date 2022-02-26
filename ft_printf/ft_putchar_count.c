@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_count.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/11/03 16:16:21 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/03 18:47:21 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+static void	ft_putchar(char c)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	write(1, &c, 1);
+}
 
-	if (ac < 2)
-	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
-	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
-	}
-	else
-	{
-		ft_parse_multiple(av);
-	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+void	ft_putchar_count(char c, int *count)
+{
+	ft_putchar(c);
+	*count += 1;
 }

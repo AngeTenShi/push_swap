@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/08/06 18:29:58 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/02 16:26:04 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	size_t	i;
 
-	if (ac < 2)
+	i = -1;
+	if (src == dst)
+		return (dst);
+	else if (src < dst)
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
-	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
+		i = n;
+		while (i-- > 0)
+			*((unsigned char *)(dst + i)) = *((unsigned char *)(src + i));
 	}
 	else
 	{
-		ft_parse_multiple(av);
+		while (++i < n)
+			*((unsigned char *)(dst + i)) = *((unsigned char *)(src + i));
 	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
+	return (dst);
 }

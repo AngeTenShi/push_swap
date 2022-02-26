@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printunsigned_count.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:50 by anggonza         ###   ########.fr       */
+/*   Created: 2021/11/03 18:14:36 by anggonza          #+#    #+#             */
+/*   Updated: 2021/11/03 18:41:05 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+void	ft_printunsigned_count(unsigned int nb, int *count)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
-
-	if (ac < 2)
+	if (nb >= 0 && nb <= 9)
 	{
-		ft_putstr_fd("Not enougth arguments\n", 2);
-		return (0);
-	}
-	else if (ac == 2)
-	{
-		ft_parse_single(av[1]);
+		ft_putchar_count(nb + 48, count);
 	}
 	else
 	{
-		ft_parse_multiple(av);
+		ft_printunsigned_count(nb / 10, count);
+		ft_putchar_count((nb % 10) + 48, count);
 	}
-	init_stack(&stack_a);
-	push_swap(&stack_a, &stack_b);
 }

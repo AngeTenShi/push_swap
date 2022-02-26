@@ -21,6 +21,9 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-
+int     ft_parse_single(char *str);
+int	    ft_parse_multiple(char **str);
+void    init_stack(t_stack *stack_a);
+void    push_swap(t_stack *stack_a, t_stack *stack_b);
 
 #endif

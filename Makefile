@@ -5,7 +5,10 @@ LFT			=	libft/libft.a
 INC			=	-I ./libft
 LIB			=	-L ./libft -lft
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
-SRC			=	src/main.c
+SRC			=	src/main.c \
+				src/parse.c \
+				src/push_swap.c \
+				src/init.c
 
 all:		$(LFT) obj $(NAME)
 

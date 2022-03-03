@@ -5,7 +5,9 @@ LFT			=	libft/libft.a
 INC			=	-I ./libft
 LIB			=	-L ./libft -lft
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
-SRC			=	src/main.c
+SRC			=	src/main.c \
+				src/parse_single_str.c \
+				src/utils.c \
 
 all:		$(LFT) obj $(NAME)
 
@@ -25,13 +27,11 @@ obj/%.o:	src/%.c
 
 clean:
 			@make -s $@ -C libft
-			@make -s $@ -C ft_printf
 			@rm -rf $(OBJ) obj
 			@echo "Objects Files has been removed."
 
 fclean:		clean
 			@make -s $@ -C libft
-			@make -s $@ -C ft_printf
 			@rm -rf $(NAME)
 			@echo "Binary file has been removed."
 

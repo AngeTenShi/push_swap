@@ -21,14 +21,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-<<<<<<< HEAD
 void	free_split(char **splitted);
 int		ft_parse_single(char *str);
-=======
-int     ft_parse_single(char *str);
-int	    ft_parse_multiple(char **str);
+int	    ft_parse_multiple(char **av);
 void    init_stack(t_stack *stack_a);
 void    push_swap(t_stack *stack_a, t_stack *stack_b);
->>>>>>> 44aa5f4d10cce67947d7126d741cb8758843660e
 
 #endif

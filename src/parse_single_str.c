@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   ft_parse_single_str.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -52,10 +52,10 @@ int	ft_is_int(char **str)
 
 int	ft_parse_single(char *str)
 {
-	int		i;
 	char	**tmp;
 
-	i = 0;
+	if (!str[0] || !str)
+		return (0);
 	tmp = ft_split(str, ' ');
 	if (ft_same(tmp) && ft_is_int(tmp))
 	{

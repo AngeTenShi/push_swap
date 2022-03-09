@@ -8,6 +8,7 @@ OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
 SRC			=	src/main.c \
 				src/parse_single_str.c \
 				src/utils.c \
+				src/ft_parse_multiple_str.c \
 
 all:		$(LFT) obj $(NAME)
 

@@ -32,8 +32,11 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		return (1);
-		//ft_parse_multiple(av);
+		if (!ft_parse_multiple(av))
+			ft_putstr_fd("Error \n", 2);
+		else
+			ft_putstr_fd("Valid \n", 2);
+		return (0);
 	}
 	//init_stack(&stack_a)
 	return (1);

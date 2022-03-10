@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_single_str.c                              :+:      :+:    :+:   */
+/*   parse_single_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:49:04 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/03 17:02:54 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:34:11 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,16 @@ int	ft_is_int(char **str)
 	j = 0;
 	while (str[i])
 	{
+		if (!ft_strncmp(str[i], "2147483647", 10))
+			return (0);
 		while (str[i][j])
 		{
-			if (ft_isdigit(str[i][j]) == 0 && (j != 0 && str[i][j] == '-'))
+			if ((ft_isdigit(str[i][j]) == 0 && str[i][j] != '-')
+			|| (j != 0 && str[i][j] == '-'))
+				return (0);
+			if (str[i][j] == '0' && str[i][j + 1])
+				return (0);
+			if (str[i][j] == '-' && !str[i][j + 1])
 				return (0);
 			j++;
 		}

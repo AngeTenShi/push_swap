@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:55:46 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/10 15:32:35 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/03/22 16:35:36 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,17 @@ int	ft_same_m(char **av, int ac)
 			return (0);
 		while (av[j])
 		{
-			if (!ft_strncmp(av[j], "2147483647", 10))
+			if (ft_strncmp(av[j], "2147483647", 10))
 				return (0);
 			if (ft_strlen(av[i]) == ft_strlen(av[j]) && i != j)
 			{
-				if (!ft_strncmp(av[i], av[j], ft_strlen(av[i])))
-				{
+				if (ft_strncmp(av[i], av[j], ft_strlen(av[i])))
 					return (0);
-				}
 			}
 			j++;
 		}
-		j = 0;
 		i++;
+		j = 1;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:49:04 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/10 15:34:11 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/03/22 16:42:12 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,23 @@
 int	ft_same(char **str)
 {
 	int	i;
+	int	j;
 
-	i = 1;
+	i = 0;
+	j = 1;
 	while (str[i])
 	{
-		if (ft_strlen(str[i - 1]) == ft_strlen(str[i]))
+		while (str[j])
 		{
-			if (ft_strncmp(str[i - 1], str[i], ft_strlen(str[i])) == 0)
-				return (0);
+			if (ft_strlen(str[i]) == ft_strlen(str[j]) && i != j)
+			{
+				if (ft_strncmp(str[i], str[j], ft_strlen(str[i])))
+					return (0);
+			}
+			j++;
 		}
 		i++;
+		j = 0;
 	}
 	return (1);
 }
@@ -38,7 +45,8 @@ int	ft_is_int(char **str)
 	j = 0;
 	while (str[i])
 	{
-		if (!ft_strncmp(str[i], "2147483647", 10))
+		if (ft_strncmp(str[i], "2147483647", 10)
+			&& ft_strncmp(str[i], "-2147483648", 11))
 			return (0);
 		while (str[i][j])
 		{

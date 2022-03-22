@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:13:18 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/22 17:14:31 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/03/22 18:42:08 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	stack_size(t_stack stack)
 
 	i = 0;
 	while (stack.next)
-		i++;
+		stack++;
 	return (i);
 }

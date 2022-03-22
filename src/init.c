@@ -6,13 +6,13 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:56:01 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/10 12:56:12 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/03/22 18:17:44 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *stack, char *parsed_arguments)
+void	init_stack(t_stack *stack, char **parsed_arguments)
 {
-
+	int	i;
 }

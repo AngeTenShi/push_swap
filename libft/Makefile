@@ -68,7 +68,7 @@ AR		= ar rcs
 
 CFLAGS = -Wall -Wextra -Werror
 
-ifdef WITH_BONUS
+ifndef WITH_BONUS
 	OBJS = ${SRCS:.c=.o} ${BONUS:.c=.o}
 endif
 

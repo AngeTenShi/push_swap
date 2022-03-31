@@ -14,8 +14,6 @@
 
 int	main(int ac, char **av)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
 	char	**parsed_args;
 
 	if (ac < 2)
@@ -29,7 +27,6 @@ int	main(int ac, char **av)
 			ft_putstr_fd("Error \n", 2);
 		else
 			parsed_args = ft_split(av[1], ' ');
-		return (0);
 	}
 	else
 	{
@@ -37,8 +34,8 @@ int	main(int ac, char **av)
 			ft_putstr_fd("Error \n", 2);
 		else
 			parsed_args = av;
-		return (0);
 	}
-	push_swap(&stack_a, &stack_b, parsed_args);
+	push_swap(parsed_args);
+	free_split(parsed_args);
 	return (1);
 }

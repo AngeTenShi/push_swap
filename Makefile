@@ -9,6 +9,8 @@ SRC			=	src/main.c \
 				src/parse_single_str.c \
 				src/utils.c \
 				src/ft_parse_multiple_str.c \
+				src/push_swap.c \
+				src/init.c \
 
 all:		$(LFT) obj $(NAME)
 

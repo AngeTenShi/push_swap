@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+//TODO IMPLEMENTER INT MAX
 int	ft_same(char **str)
 {
 	int	i;

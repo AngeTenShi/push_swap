@@ -18,7 +18,7 @@
 void	free_split(char **splitted);
 int		ft_parse_single(char *str);
 int		ft_parse_multiple(char **av, int ac);
-void	init_stack(t_list *stack_a, int *parsed_arguments);
+void	init_stack(t_list **stack_a, t_list **stack_b, int *parsed_arguments);
 void	push_swap(char **parsed_arguments);
 
 #endif

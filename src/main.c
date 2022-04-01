@@ -12,10 +12,8 @@
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int is_valid(int ac, char **av, int *splitted, char ***parsed_args)
 {
-	char	**parsed_args;
-
 	if (ac < 2)
 	{
 		ft_putstr_fd("Error\n", 2);
@@ -24,18 +22,45 @@ int	main(int ac, char **av)
 	else if (ac == 2)
 	{
 		if (!ft_parse_single(av[1]))
+		{
 			ft_putstr_fd("Error \n", 2);
+			return (0);
+		}
 		else
-			parsed_args = ft_split(av[1], ' ');
+		{
+			*parsed_args = ft_split(av[1], ' ');
+			*splitted = 1;
+			return (1);
+		}
+		if (parsed_args)
+			return (1);
 	}
 	else
 	{
 		if (!ft_parse_multiple(av, ac))
+		{
 			ft_putstr_fd("Error \n", 2);
+			return (0);
+		}
 		else
-			parsed_args = av;
+		{
+			*parsed_args = &av[1];
+			return (1);
+		}
 	}
+}
+// TODO : FREE TOUTES LES CHAINED LIST (FUNCTION FREE_LIST)
+int	main(int ac, char **av)
+{
+	char	**parsed_args;
+	int     splitted;
+
+	splitted = 0;
+	parsed_args = NULL;
+	if (!is_valid(ac, av, &splitted, &parsed_args))
+		return (0);
 	push_swap(parsed_args);
-	free_split(parsed_args);
+	if (splitted)
+		free_split(parsed_args);
 	return (1);
 }

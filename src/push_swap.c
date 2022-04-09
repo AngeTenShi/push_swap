@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:56:05 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/22 18:19:11 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/09 11:28:39 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	init_stack(t_list **stack_a, t_list **stack_b, int *parsed_arguments)
 	i = 0;
 	while (parsed_arguments[i])
 	{
-		ft_lstadd_front(stack_a, ft_lstnew(&parsed_arguments[i]));
+		ft_lstadd_back(stack_a, ft_lstnew(&parsed_arguments[i]));
 		i++;
 	}
 	*stack_b = ft_lstnew(NULL);

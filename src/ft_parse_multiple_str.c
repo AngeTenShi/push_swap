@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:55:46 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/22 16:35:36 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/09 11:42:21 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	ft_same_m(char **av, int ac)
 			return (0);
 		while (av[j])
 		{
-			if (ft_strncmp(av[j], "2147483647", 10))
-				return (0);
 			if (ft_strlen(av[i]) == ft_strlen(av[j]) && i != j)
 			{
 				if (ft_strncmp(av[i], av[j], ft_strlen(av[i])))
@@ -65,11 +63,27 @@ int	ft_is_int_m(char **av, int ac)
 	return (1);
 }
 
+int	ft_is_overflow(char **av, int ac)
+{
+	int	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (ft_strncmp(av[i], "2147483647", 10))
+			return (0);
+		if (!ft_atoi(av[i]) && av[i][0] != '0')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	ft_parse_multiple(char **av, int ac)
 {
 	if (!av[1][0])
 		return (0);
-	if (ft_same_m(av, ac) && ft_is_int_m(av, ac))
+	if (ft_same_m(av, ac) && ft_is_int_m(av, ac) && ft_is_overflow(av, ac))
 		return (1);
 	return (0);
 }

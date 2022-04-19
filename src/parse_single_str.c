@@ -6,12 +6,12 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:49:04 by anggonza          #+#    #+#             */
-/*   Updated: 2022/03/22 16:42:12 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/09 12:01:05 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//TODO IMPLEMENTER INT MAX
+
 int	ft_same(char **str)
 {
 	int	i;
@@ -45,9 +45,6 @@ int	ft_is_int(char **str)
 	j = 0;
 	while (str[i])
 	{
-		if (ft_strncmp(str[i], "2147483647", 10)
-			&& ft_strncmp(str[i], "-2147483648", 11))
-			return (0);
 		while (str[i][j])
 		{
 			if ((ft_isdigit(str[i][j]) == 0 && str[i][j] != '-')
@@ -65,6 +62,22 @@ int	ft_is_int(char **str)
 	return (1);
 }
 
+int	ft_overflow(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_strncmp(str[i], "2147483647", 10))
+			return (0);
+		if (!ft_atoi(str[i]) && str[i][0] != '0')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	ft_parse_single(char *str)
 {
 	char	**tmp;
@@ -72,7 +85,7 @@ int	ft_parse_single(char *str)
 	if (!str[0] || !str)
 		return (0);
 	tmp = ft_split(str, ' ');
-	if (ft_same(tmp) && ft_is_int(tmp))
+	if (ft_same(tmp) && ft_is_int(tmp) && ft_overflow(tmp))
 	{
 		free_split(tmp);
 		return (1);

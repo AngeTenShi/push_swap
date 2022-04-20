@@ -12,7 +12,7 @@ SRCS_DIR	=	src
 OBJS_DIR	=	objs
 SRCS			=	main.c push_swap.c utils.c \
 				parse/parse_single_str.c parse/ft_parse_multiple_str.c \
-				stack/init.c \
+				stack/init.c stack/operation.c stack/print.c\
 
 OBJS		=	$(SRCS:%.c=$(OBJS_DIR)/%.o)
 

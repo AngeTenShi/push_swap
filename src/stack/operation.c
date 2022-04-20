@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:53:45 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 17:19:04 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:26:44 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,24 @@ void	rotate(t_list **stack)
 		last = last->next;
 	last->next = tmp;
 	tmp->next = NULL;
+}
+
+void	rrotate(t_list **stack)
+{
+	t_list	*first;
+	t_list	*last;
+	t_list	*previous;
+
+	first = *stack;
+	last = *stack;
+	while (last->next)
+	{
+		previous = last;
+		last = last->next;
+	}
+	last->next = first;
+	previous->next = NULL;
+	*stack = last;
 }
 
 void	push(t_list **source, t_list **destination)

@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:56:05 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 17:23:40 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:28:51 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,8 @@ void	push_swap(char **str)
 	parsed_args = ft_create_tab_int(str);
 	init_stack(&stack_a, &stack_b, parsed_args);
 	print_stack(&stack_a, &stack_b);
-	rotate(&stack_a);
 	printf("\n");
-	print_stack(&stack_a, &stack_b);
-	printf("\n");
-	push(&stack_a, &stack_b);
+	rrotate(&stack_a);
 	print_stack(&stack_a, &stack_b);
 	return ;
 }

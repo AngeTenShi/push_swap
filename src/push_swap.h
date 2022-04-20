@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:07:21 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 17:22:50 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:27:16 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ void	print_stack(t_list **stack_a, t_list **stack_b);
 void	swap(t_list **stack);
 void	rotate(t_list **stack);
 void	push(t_list **source, t_list **destination);
-
+void	rrotate(t_list **stack);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 #endif

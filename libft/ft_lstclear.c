@@ -6,13 +6,13 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:21:00 by anggonza          #+#    #+#             */
-/*   Updated: 2021/11/02 13:48:27 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:14:45 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(int))
 {
 	t_list	*temp;
 

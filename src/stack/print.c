@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:26:52 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 17:13:35 by anggonza         ###   ########.fr       */
+/*   Created: 2022/04/20 16:31:35 by anggonza          #+#    #+#             */
+/*   Updated: 2022/04/20 17:19:34 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
-void	init_stack(t_list **stack_a, t_list **stack_b, int *parsed_arguments)
+void	print_stack(t_list **stack_a, t_list **stack_b)
 {
-	int	i;
+	t_list	*element_a;
+	t_list	*element_b;
+	int		print_a;
+	int		print_b;
 
-	i = 0;
-	while (parsed_arguments[i])
+	element_a = *stack_a;
+	element_b = *stack_b;
+	while (element_a)
 	{
-		ft_lstadd_back(stack_a, ft_lstnew(parsed_arguments[i]));
-		i++;
+		print_a = element_a->content;
+		print_b = element_b->content;
+		printf("%d          %d\n", print_a, print_b);
+		element_a = element_a->next;
 	}
-	i = 0;
-	*stack_b = ft_lstnew(0);
+	printf("A          B\n");
 }

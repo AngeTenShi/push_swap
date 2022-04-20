@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:31:35 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 17:19:34 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:36:14 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	print_stack(t_list **stack_a, t_list **stack_b)
 		print_b = element_b->content;
 		printf("%d          %d\n", print_a, print_b);
 		element_a = element_a->next;
+		if (element_b->next)
+			element_b = element_b->next;
 	}
 	printf("A          B\n");
 }

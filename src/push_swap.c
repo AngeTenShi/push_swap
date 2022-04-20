@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:56:05 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 16:34:48 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:23:40 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ void	push_swap(char **str)
 	print_stack(&stack_a, &stack_b);
 	rotate(&stack_a);
 	printf("\n");
+	print_stack(&stack_a, &stack_b);
+	printf("\n");
+	push(&stack_a, &stack_b);
 	print_stack(&stack_a, &stack_b);
 	return ;
 }

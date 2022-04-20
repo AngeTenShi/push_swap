@@ -6,11 +6,11 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:55:46 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/09 11:42:21 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/20 14:27:13 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_same_m(char **av, int ac)
 {

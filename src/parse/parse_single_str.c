@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:49:04 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/21 16:20:40 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/21 16:26:15 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_is_int(char **str)
 			if ((ft_isdigit(str[i][j]) == 0 && str[i][j] != '-')
 			|| (j != 0 && str[i][j] == '-'))
 				return (0);
-			if (str[i][0] == '0' && str[i][j + 1])
+			if (str[i][0] == '0' && str[i][1])
 				return (0);
 			if (str[i][j] == '-' && !str[i][j + 1])
 				return (0);

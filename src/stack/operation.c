@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:53:45 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/21 15:32:58 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/21 16:12:40 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	rotate(t_list **stack)
 	t_list	*tmp;
 	t_list	*last;
 
-	if (ft_lstsize(*stack) < 2)
-		return ;
 	tmp = *stack;
+	if (ft_lstsize(tmp) < 2)
+		return ;
 	last = *stack;
 	*stack = tmp->next;
 	while (last->next)

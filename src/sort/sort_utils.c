@@ -6,11 +6,12 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:10:04 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 15:14:06 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/21 13:00:21 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+#include <stdio.h>
 
 int	ft_is_sort(t_list *stack_a, t_list *stack_b)
 {

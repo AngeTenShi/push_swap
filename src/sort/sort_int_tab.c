@@ -1,27 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:26:52 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/21 12:14:54 by anggonza         ###   ########.fr       */
+/*   Created: 2022/04/21 14:25:30 by anggonza          #+#    #+#             */
+/*   Updated: 2022/04/21 14:29:16 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_stack(t_list **stack_a, t_list **stack_b, int *parsed_arguments)
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+int	get_size(int *tab)
 {
 	int	i;
 
 	i = 0;
-	while (parsed_arguments[i])
-	{
-		ft_lstadd_back(stack_a, ft_lstnew(parsed_arguments[i]));
+	while (tab[i])
 		i++;
-	}
+	return (i);
+}
+
+void	ft_sort_int_tab(int *tab)
+{
+	int	i;
+	int	sorted;
+	int	size;
+
+	sorted = 1;
+	size = get_size(tab);
 	i = 0;
-	*stack_b = NULL;
+	while (sorted)
+	{
+		i = 0;
+		sorted = 0;
+		while (i < size - 1)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				ft_swap(&tab[i], &tab[i + 1]);
+				sorted = 1;
+			}
+			i++;
+		}
+	}
 }

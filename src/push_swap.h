@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:07:21 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 18:27:16 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:02:39 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,10 @@ void	rrotate(t_list **stack);
 void	ss(t_list **stack_a, t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
+int		ft_is_sort(t_list *stack_a, t_list *stack_b);
+void	ft_sort_int_tab(int *tab);
+int		get_size(int *tab);
+void	push_to_chunck(int *tab, t_list **stack_a, t_list **stack_b);
+void	sort(int *tab, t_list **stack_a, t_list **stack_b);
+
 #endif

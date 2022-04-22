@@ -23,6 +23,11 @@ void	second_chunck_op(t_list **stack_a, t_list **stack_b)
 	push(stack_a, stack_b);
 }
 
+int get_median(int *tab)
+{
+	int med1;
+}
+//TODO TROUVER LA MEDIAN COMME IL FAUT PARCOURIR LA STACK ET COMPARER AVEC TAB[MED]
 void	push_to_chunck(int *tab, t_list **stack_a, t_list **stack_b)
 {
 	int	i;
@@ -32,8 +37,8 @@ void	push_to_chunck(int *tab, t_list **stack_a, t_list **stack_b)
 
 	pas = get_size(tab) / 3;
 	i = 0;
-	med1 = get_size(tab) - pas;
-	med2 = get_size(tab) - 2 * pas;
+	med2 = get_size(tab) - pas;
+	med1 = get_size(tab) - 2 * pas;
 	ft_sort_int_tab(tab);
 	while (tab[i])
 	{

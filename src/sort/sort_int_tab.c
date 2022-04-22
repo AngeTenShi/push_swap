@@ -26,7 +26,7 @@ int	get_size(int *tab)
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	while (tab[i] || tab[i + 1])
 		i++;
 	return (i);
 }

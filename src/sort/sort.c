@@ -34,8 +34,13 @@ void	sort(int *tab, t_list **stack_a, t_list **stack_b)
 	while (get_size(tab) > 6)
 	{
 		push_to_chunck(tab, stack_a, stack_b);
+		print_stack(stack_a);
+		printf("\n");
+		print_stack(stack_b);
 		tab = get_new_tab(tab);
-		print_stack(stack_a, stack_b);
 	}
+	print_stack(stack_a);
+	printf("\n");
+	print_stack(stack_b);
 	printf("fini\n");
 }

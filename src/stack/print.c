@@ -13,25 +13,16 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
-void	print_stack(t_list **stack_a, t_list **stack_b)
+void	print_stack(t_list **stack)
 {
-	t_list	*element_a;
-	t_list	*element_b;
-	int		print_a;
-	int		print_b;
+	t_list	*element;
+	int		print;
 
-	element_a = *stack_a;
-	element_b = *stack_b;
-	if (!*stack_b)
-		element_b = ft_lstnew(0);
-	while (element_a)
+	element = *stack;
+	while (element)
 	{
-		print_a = element_a->content;
-		print_b = element_b->content;
-		printf("%d          %d\n", print_a, print_b);
-		element_a = element_a->next;
-		if (element_b->next)
-			element_b = element_b->next;
+		print = element->content;
+		printf("%d\n", print);
+		element = element->next;
 	}
-	printf("A          B\n");
 }

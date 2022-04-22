@@ -14,7 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-
+#include <stdio.h>
+//TODO RETIRER CET INCLUDE
 void	free_split(char **splitted);
 int		ft_parse_single(char *str);
 int		ft_parse_multiple(char **av, int ac);

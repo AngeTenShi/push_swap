@@ -62,7 +62,7 @@ OBJS_BONUS = ${BONUS:.c=.o}
 
 HEADER	= includes
 
-CC		= gcc
+CC		= gcc -g
 RM		= rm -f
 AR		= ar rcs
 

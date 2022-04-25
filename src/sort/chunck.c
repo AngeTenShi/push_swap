@@ -48,12 +48,13 @@ void	push_to_chunck(int *tab, t_list **stack_a, t_list **stack_b)
 	while (stack)
 	{
 		printf("Stack size : %d\n", ft_lstsize(stack));
+		printf("Content : %d\n", stack->content);
 		if (stack->content <= med1)
 			first_chunck_op(stack_a, stack_b);
 		else if (stack->content <= med2)
 			second_chunck_op(stack_a, stack_b);
 		else
 			third_chunck_op(stack_a,stack_b);
-		stack = stack->next;
+		stack = *stack_a;
 	}
 }

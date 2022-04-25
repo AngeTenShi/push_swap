@@ -76,6 +76,6 @@ void	push(t_list **source, t_list **destination)
 		return ;
 	}
 	*source = tmp_source->next;
-	tmp_dest->next = tmp_dest;
 	*destination = tmp_source;
+	tmp_dest->next = tmp_dest;
 }

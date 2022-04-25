@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:53:45 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/21 16:12:40 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:05:31 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ void	push(t_list **source, t_list **destination)
 	}
 	*source = tmp_source->next;
 	*destination = tmp_source;
-	tmp_dest->next = tmp_dest;
+	(*destination)->next = tmp_dest;
 }

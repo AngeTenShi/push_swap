@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   chunck_simple.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:10:04 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/25 14:36:08 by anggonza         ###   ########.fr       */
+/*   Created: 2022/04/25 14:40:03 by anggonza          #+#    #+#             */
+/*   Updated: 2022/04/25 14:48:03 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
-int	ft_is_sort(t_list *stack_a, t_list *stack_b)
+void	push_to_chunck_simple(int *tab, t_list **stack_a, t_list **stack_b)
 {
-	int	min;
+	int		median;
+	t_list	*stack;
 
-	min = stack_a->content;
-	while (stack_a)
+	median = tab[get_size(tab) / 2];
+	stack = *stack_a;
+	while (!ft_is_sort(stack))
 	{
-		if (ft_lstsize(stack_b) == 0 || stack_a->content > min)
-			return (0);
-		stack_a = stack_a->next;
+		if (stack->content < median)
 	}
-	return (1);
 }

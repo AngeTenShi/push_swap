@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:43:55 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/25 13:34:29 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:33:54 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	third_chunck_op(t_list **stack_a, t_list **stack_b)
 }
 
 //TODO TROUVER LA MEDIAN COMME IL FAUT PARCOURIR LA STACK ET COMPARER AVEC TAB[MED]
-void	push_to_chunck(int *tab, t_list **stack_a, t_list **stack_b)
+void	push_to_chunck_triple(int *tab, t_list **stack_a, t_list **stack_b)
 {
 	int		pas;
 	int		med2;

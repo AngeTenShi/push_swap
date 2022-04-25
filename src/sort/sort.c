@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:01:24 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/25 13:39:58 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:47:30 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	*get_new_tab(int *tab)
 	int	j;
 	int	*new_tab;
 
-	new_tab = malloc(sizeof(int) * (get_size(tab) / 3 + 1));
+	new_tab = malloc(sizeof(int) * (get_size(tab) / 3) + 1);
 	i = get_size(tab) - get_size(tab) / 3 - 1;
 	j = 0;
 	while (tab[i])
@@ -36,7 +36,11 @@ void	sort(int *tab, t_list **stack_a, t_list **stack_b)
 {
 	while (get_size(tab) > 6)
 	{
-		push_to_chunck(tab, stack_a, stack_b);
+		push_to_chunck_triple(tab, stack_a, stack_b);
 		tab = get_new_tab(tab);
+	}
+	while (!ft_is_sort(*stack_a, *stack_b))
+	{
+		push_to_chunck_simple(tab, stack_a, stack_b);
 	}
 }

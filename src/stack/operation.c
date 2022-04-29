@@ -6,13 +6,13 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:53:45 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/25 12:05:31 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:46:06 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_list **stack)
+void	swap(t_list **stack, char *print)
 {
 	t_list	*tmp;
 	t_list	*tmp_swap;
@@ -25,9 +25,10 @@ void	swap(t_list **stack)
 	tmp_val = tmp->content;
 	tmp->content = tmp_swap->content;
 	tmp_swap->content = tmp_val;
+	ft_putstr_fd(print, 1);
 }
 
-void	rotate(t_list **stack)
+void	rotate(t_list **stack, char *print)
 {
 	t_list	*tmp;
 	t_list	*last;
@@ -41,9 +42,10 @@ void	rotate(t_list **stack)
 		last = last->next;
 	last->next = tmp;
 	tmp->next = NULL;
+	ft_putstr_fd(print, 1);
 }
 
-void	rrotate(t_list **stack)
+void	rrotate(t_list **stack, char *print)
 {
 	t_list	*first;
 	t_list	*last;
@@ -59,11 +61,11 @@ void	rrotate(t_list **stack)
 	last->next = first;
 	previous->next = NULL;
 	*stack = last;
+	ft_putstr_fd(print, 1);
 }
 
-void	push(t_list **source, t_list **destination)
+void	push(t_list **source, t_list **destination, char *print)
 {
-// PUSH SOURCE DANS DESTINATION
 	t_list	*tmp_source;
 	t_list	*tmp_dest;
 
@@ -78,4 +80,5 @@ void	push(t_list **source, t_list **destination)
 	*source = tmp_source->next;
 	*destination = tmp_source;
 	(*destination)->next = tmp_dest;
+	ft_putstr_fd(print, 1);
 }

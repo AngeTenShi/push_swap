@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:56:05 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/21 14:11:50 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:58:24 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	push_swap(char **str)
 	stack_b = NULL;
 	parsed_args = ft_create_tab_int(str);
 	init_stack(&stack_a, &stack_b, parsed_args);
-	sort(parsed_args, &stack_a, &stack_b);
+	free(parsed_args);
+	sort(&stack_a, &stack_b);
 }

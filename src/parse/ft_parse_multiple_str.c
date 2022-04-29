@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:55:46 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 14:27:13 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 15:50:49 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_is_int_m(char **av, int ac)
 				return (0);
 			if (!ft_isdigit(av[i][j]) && j == 0 && av[i][j] != '-')
 				return (0);
-			if (av[i][j] == '0' && av[i][j + 1])
+			if (av[i][0] == '0' && av[i][1])
 				return (0);
 			j++;
 		}

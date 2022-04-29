@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:07:21 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/25 14:41:42 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:47:20 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,16 @@ void	init_stack(t_list **stack_a, t_list **stack_b, int *parsed_arguments);
 void	push_swap(char **parsed_arguments);
 int		ft_strlenn(char **str);
 void	print_stack(t_list **stack);
-void	swap(t_list **stack);
-void	rotate(t_list **stack);
-void	push(t_list **source, t_list **destination);
-void	rrotate(t_list **stack);
-void	ss(t_list **stack_a, t_list **stack_b);
-void	rr(t_list **stack_a, t_list **stack_b);
-void	rrr(t_list **stack_a, t_list **stack_b);
+void	swap(t_list **stack, char *print);
+void	rotate(t_list **stack, char *print);
+void	push(t_list **source, t_list **destination, char *print);
+void	rrotate(t_list **stack, char *print);
+void	ss(t_list **stack_a, t_list **stack_b, char *print);
+void	rr(t_list **stack_a, t_list **stack_b, char *print);
+void	rrr(t_list **stack_a, t_list **stack_b, char *print);
 int		ft_is_sort(t_list *stack_a, t_list *stack_b);
 void	ft_sort_int_tab(int *tab);
 int		get_size(int *tab);
-void	push_to_chunck_triple(int *tab, t_list **stack_a, t_list **stack_b);
-void	push_to_chunck_simple(int *tab, t_list **stack_a, t_list **stack_b);
-void	sort(int *tab, t_list **stack_a, t_list **stack_b);
+void	sort(t_list **stack_a, t_list **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:42:05 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/20 17:18:36 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:48:15 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_list
 {
-	int			content;
+	int				content;
 	struct s_list	*next;
 }	t_list;
 

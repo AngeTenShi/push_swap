@@ -6,12 +6,12 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 00:23:39 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/21 14:13:14 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 17:23:31 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//TODO 25 lines
 int	ft_atoi(const char *str)
 
 {
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 	while (str[i])
 	{
 		if (num > ((str[i] - 48) + (num * 10)))
-			exit(EXIT_FAILURE);
+			return (-2147483647);
 		if (str[i] >= '0' && str[i] <= '9')
 			num = (str[i] - 48) + (num * 10);
 		else

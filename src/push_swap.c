@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:56:05 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/29 16:58:24 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/04/29 17:32:30 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ int	*ft_create_tab_int(char **str)
 	return (new);
 }
 
+void	ft_free_stack(t_list **stack_a, t_list **stack_b)
+{
+	while (*stack_a)
+	{
+		free(*stack_a);
+		*stack_a = (*stack_a)->next;
+	}
+	stack_a = NULL;
+	stack_b = NULL;
+}
+
 void	push_swap(char **str)
 {
 	t_list	*stack_a;
@@ -48,6 +59,6 @@ void	push_swap(char **str)
 	stack_b = NULL;
 	parsed_args = ft_create_tab_int(str);
 	init_stack(&stack_a, &stack_b, parsed_args);
-	free(parsed_args);
 	sort(&stack_a, &stack_b);
+	ft_free_stack(&stack_a, &stack_b);
 }

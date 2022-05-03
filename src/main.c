@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/29 17:28:39 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:28:23 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ int	main(int ac, char **av)
 		free_split(parsed_args);
 		return (0);
 	}
-	push_swap(parsed_args);
+	push_swap(parsed_args, splitted);
 	if (splitted)
 		free_split(parsed_args);
+	//system("leaks push_swap");
 	return (1);
 }

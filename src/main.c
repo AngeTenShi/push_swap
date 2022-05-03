@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:58:15 by anggonza          #+#    #+#             */
-/*   Updated: 2022/05/03 16:28:23 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:36:10 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	is_valid(int ac, char **av, int *splitted, char ***parsed_args)
 		}
 	}
 }
-// TODO : FREE TOUTES LES CHAINED LIST (FUNCTION FREE_LIST)
+//TODO METTRE LE 0 DE LA FIN AU DEBUT ET TROUVER UNE SOLUTION TESTER
 
 int	main(int ac, char **av)
 {

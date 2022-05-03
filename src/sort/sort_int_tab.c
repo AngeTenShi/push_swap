@@ -6,20 +6,11 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:25:30 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/29 15:58:38 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:35:08 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	ft_swap(int *a, int *b)
-{
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
 
 int	get_size(int *tab)
 {
@@ -33,25 +24,26 @@ int	get_size(int *tab)
 
 void	ft_sort_int_tab(int *tab)
 {
-	int	i;
-	int	sorted;
-	int	size;
+	int		i;
+	int		j;
+	int		tmp;
+	int		size;
 
-	sorted = 1;
 	size = get_size(tab);
-	i = 0;
-	while (sorted)
+	j = 0;
+	while (j < size)
 	{
 		i = 0;
-		sorted = 0;
-		while (i < size - 1)
+		while (i < size)
 		{
-			if (tab[i] > tab[i + 1])
+			if (tab[i] >= tab[j])
 			{
-				ft_swap(&tab[i], &tab[i + 1]);
-				sorted = 1;
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
 			}
 			i++;
 		}
+		j++;
 	}
 }

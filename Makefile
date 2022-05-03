@@ -13,7 +13,7 @@ OBJS_DIR	=	objs
 SRCS			=	main.c push_swap.c utils.c \
 				parse/parse_single_str.c parse/ft_parse_multiple_str.c \
 				stack/init.c stack/operation.c stack/print.c\
-				sort/sort_utils.c sort/sort.c  sort/sort_int_tab.c \
+				sort/sort_utils.c sort/sort.c  sort/sort_int_tab.c sort/case.c \
 
 OBJS		=	$(SRCS:%.c=$(OBJS_DIR)/%.o)
 

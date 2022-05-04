@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:01:24 by anggonza          #+#    #+#             */
-/*   Updated: 2022/05/04 12:58:35 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:37:50 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	sort(t_list **stack_a, t_list **stack_b)
 	i = 0;
 	if (ft_lstsize(*stack_a) == 3)
 		case_3(stack_a);
+	if (ft_lstsize(*stack_a) == 5)
+		case_5(stack_a, stack_b);
 	while (!ft_is_sort(*stack_a, *stack_b))
 	{
 		radix_ith_bits(stack_a, stack_b, i);

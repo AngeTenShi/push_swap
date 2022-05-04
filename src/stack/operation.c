@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:53:45 by anggonza          #+#    #+#             */
-/*   Updated: 2022/04/29 17:09:08 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/05/04 12:29:21 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	push(t_list **source, t_list **destination, char *print)
 	{
 		ft_lstadd_back(destination, ft_lstnew(tmp_source->content));
 		*source = tmp_source->next;
+		ft_putstr_fd(print, 1);
 		return ;
 	}
 	*source = tmp_source->next;

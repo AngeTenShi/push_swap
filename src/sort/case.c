@@ -6,7 +6,7 @@
 /*   By: anggonza <anggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:50:38 by anggonza          #+#    #+#             */
-/*   Updated: 2022/05/04 14:08:08 by anggonza         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:11:11 by anggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,14 @@ void	case_3(t_list **stack_a)
 void	case_5(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
-	t_list	*stack;
 
 	i = 0;
-	stack = *stack_a;
 	while (i < 5)
 	{
-		if (stack->content < 2)
+		if ((*stack_a)->content < 2)
 			push(stack_a, stack_b, "pb\n");
 		else
 			rotate(stack_a, "ra\n");
-		stack = *stack_a;
 		i++;
 	}
 	case_3(stack_a);
